@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Show Data</h1>
+    <ul>
+        /show/:id/edit
+      <%  for(let item of items){%>
+             <li><%= item.title %></li>
+             <button>
+                <a href="/show/<%= item._id %>/edit">Edit</a>
+             </button>
+             
+            
+                <form action="/show/<%= item._id %>?_method=DELETE" method="post">
+                   <button>Delete</button>
+                </form>
+             
+        <%}%>
+    </ul>
+   
+</body>
+</html>
